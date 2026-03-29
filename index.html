@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>স্বাধীন বাটন</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+h1{
+    margin-bottom: 50px;
+    color: #ff1493;
+}
+button{
+    padding: 20px 40px;
+    font-size: 2em;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+button:hover{
+    transform: scale(1.1);
+    background: #ff1493;
+}
+</style>
+</head>
+<body>
+
+<h1>বাংলা ভয়েস বাটন</h1>
+<button onclick="speak()">স্বাধীন</button>
+
+<script>
+function speak(){
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = "স্বাধীন";
+    msg.lang = 'bn-BD'; // বাংলা ভাষায় পড়বে
+    window.speechSynthesis.speak(msg);
+}
+</script>
+
+</body>
+</html>
